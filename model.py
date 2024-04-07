@@ -75,14 +75,13 @@ tf.random.set_seed(1989)
 
 # Create a model using the Sequential API
 model = tf.keras.Sequential([
-    tf.keras.layers.Dense(1), 
+    tf.keras.layers.Dense(1, input_shape=(1,)),
     tf.keras.layers.Dense(1),
-    input_shape=[1])
     ])
 
 # Compile the model
-model.compile(loss = tf.keras.losses.mae,
-              optimizer = tf.keras.optimizers.SGD(),
+model.compile(loss = tf.keras.losses.mean_absolute_error,
+              optimizer = tf.keras.optimizers.SGD(lr=0.01),
               metrics = ['mae'])
 
 # Fit the model
