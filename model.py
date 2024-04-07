@@ -81,7 +81,7 @@ model = tf.keras.Sequential([
 
 # Compile the model
 model.compile(loss = tf.keras.losses.mean_absolute_error,
-              optimizer = tf.keras.optimizers.SGD(lr=0.01),
+              optimizer = tf.keras.optimizers.SGD(learning_rate=0.01),
               metrics = ['mae'])
 
 # Fit the model
